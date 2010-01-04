@@ -1,43 +1,62 @@
 from django.db import models
 
-# Create your models here.
-
 class Collaborator(models.Model):
-    collaborator_name = models.CharField(max_length=200)
-    collaborator_url = models.TextField()
+    name = models.CharField(max_length=200)
+    website_url = models.URLField()
 
     def __unicode__(self):
-        return self.collaborator_name
+        return self.name
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
 
     def __unicode__(self):
-        return self.category_name
+        return self.name
 
 class Project(models.Model):
-    project_name = models.CharField(max_length=200)
-    project_dir_name = models.CharField(max_length=200)
-    project_date = models.DateField()
-    project_desc = models.TextField()
-    project_url = models.TextField(null=True, blank=True)
-    project_repo = models.TextField(null=True, blank=True)
+    name = models.CharField(max_length=200)
+    short_name = models.CharField(max_length=200)
+    date = models.DateField()
+    description = models.TextField()
+    website_url = models.URLField(null=True, blank=True)
+    repository_url = models.URLField(null=True, blank=True)
     collaborators = models.ManyToManyField(Collaborator, null=True, blank=True)
     categories = models.ManyToManyField(Category, null=True, blank=True)
+    related = models.ManyToManyField("self", null=True, blank=True)
 
     def __unicode__(self):
-        return self.project_name
+        return self.name
+
+class MediaType(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.name
+
+class Photo(models.Model):
+    project = models.ForeignKey(Project)
+    caption = models.TextField(null=True, blank=True)
+    photo_url = models.URLField(null=True, blank=True)
+    thumbnail_url = models.URLField(null=True, blank=True)
+    flickr_url = models.URLField(null=True, blank=True)
+
+    def __unicode__(self):
+        return self.project.name + ": " + self.caption
 
 class Media(models.Model):
-    project = models.ForeignKey(Project)
-    media_desc = models.TextField()
-    media_url = models.TextField()
-
-class Press(models.Model):
-    project = models.ForeignKey(Project)
-    press_desc = models.TextField()
-    press_name = models.TextField()
-    press_url = models.TextField()
+    projects = models.ManyToManyField(Project, null=True, blank=True)
+    media_type =  models.ForeignKey(MediaType)
+    description = models.TextField()
+    website_url = models.TextField()
 
     def __unicode__(self):
-        return self.press_name + " - " + self.press_desc
+        return self.media_type.name + " - " + self.description
+
+class Press(models.Model):
+    projects = models.ForeignKey(Project)
+    description = models.TextField()
+    name = models.TextField()
+    website_url = models.TextField()
+
+    def __unicode__(self):
+        return self.project.name + ": " + self.name + " - " + self.description

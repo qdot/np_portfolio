@@ -15,5 +15,5 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
     (r'^portfolio/$', 'django_portfolio.portfolio.views.index'),
-    (r'^portfolio/(?P<project_name>)\w+$', 'django_portfolio.portfolio.views.index'),
+    (r'^portfolio/(?P<project_name>[a-zA-Z0-9_-]+)$', 'django_portfolio.portfolio.views.project'),
 )
