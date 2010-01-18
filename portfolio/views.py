@@ -2,6 +2,7 @@
 from django.shortcuts import render_to_response
 from django_portfolio.portfolio.models import *
 import re
+import markdown
 
 def index(request):
     project_list = Project.objects.all().order_by('-date')
