@@ -1,5 +1,7 @@
 # SeXBox Vibration Controller
 
+<CENTER><small>Originally posted on [slashdong.org][13] on February 24th, 2005</small></CENTER>
+
 ![][1] 
 
 ## What you'll need
@@ -217,26 +219,15 @@ finding the lines. Once I do this, I'll post pictures. I'm sure the
 instructions will be almost exactly the same.
 
    [1]: http://www.slashdong.org/images/sexbox/bigintro.jpg
-
    [2]: http://www.gamegirladvance.com/archives/2002/10/26/sex_in_games_rezvibrator.html
-
    [3]: http://www.g4tv.com/screensavers/features/44543/Dark_Tip_Build_an_Xshok_Controller.html
-
    [4]: http://www.xbox-scene.com/articles/s-controller-led.php
-
    [5]: http://www.slashdong.org/images/sexbox/screwholes.jpg
-
    [6]: http://www.slashdong.org/images/sexbox/solderpoints.jpg
-
    [7]: http://www.slashdong.org/images/sexbox/wirethru.jpg
-
    [8]: http://www.slashdong.org/images/sexbox/batteryside.jpg
-
    [9]: http://www.slashdong.org/images/sexbox/batterytop.jpg
-
    [10]: http://www.slashdong.org/images/sexbox/batteryin.jpg
-
    [11]: http://www.amazon.com/exec/obidos/tg/detail/-/0312420331/qid=1109205242/sr=8-1/ref=sr_8_xs_ap_i1_xgl14/002-0947340-9760020?v=glance&s=books&n=507846
-
    [12]: http://www.imdb.com/title/tt0115964/
-
+   [13]: http://www.slashdong.org/
