@@ -1,8 +1,3 @@
-# Everything you ever wanted to know about the FC2009 Fursuit Parade Scan 
-<small>but didn't have time to ask because you had a fursuit head on or something...</small>
-
-## Table of Contents: 
-
 1. [History][1]
 1. [Introduction][2]
 1. [The Event][3]
