@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Example:
-    # (r'^django_portfolio/', include('django_portfolio.foo.urls')),
+    # (r'^np_portfolio/', include('np_portfolio.foo.urls')),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
@@ -14,6 +14,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
-    (r'^portfolio/$', 'django_portfolio.portfolio.views.index'),
-    (r'^portfolio/(?P<project_name>[a-zA-Z0-9_-]+)$', 'django_portfolio.portfolio.views.project'),
+    (r'^portfolio/$', 'np_portfolio.portfolio.views.index'),
+    (r'^portfolio/(?P<project_name>[a-zA-Z0-9_-]+)$', 'np_portfolio.portfolio.views.project'),
 )

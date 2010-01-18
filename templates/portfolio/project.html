@@ -384,15 +384,41 @@
       text-align: center;
       }
 
+      .Project TABLE {
+      width:80%;
+      border: 1px solid #FFF;
+
+      }
+
       .Project TH {
       vertical-align:text-top;
       font-size:11pt;
+      font-weight:lighter;
+      width:90px;
       text-align: right;
-      font-weight: bold;
+      background: #CCC;
+      margin-right:5px;
+      padding-right:5px;
       }
 
       .Project TD {
       font-size:10pt;
+      }
+    
+      .content_body {
+      margin-left:20px;
+      margin-right:20px;
+      font-size:10pt;
+      }
+
+      .content_body H1 {
+      text-align: center;
+      }
+
+      .content_body IMG {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
       }
     </style> 
     <TITLE>Nonpolynomial Labs - </TITLE> 
@@ -480,19 +506,20 @@
 {% if project %}
 <div class="Project">
 <H1>{{project.name}}</H1>
+<CENTER>
 <TABLE>
-<TR><TH>Description:</TH><TD>{{project.description}}</TD></TR>
+<TR><TH>Description</TH><TD>{{project.description}}</TD></TR>
 
 {% if project.website_url %}
-<TR><TH>Website:</TH><TD><A HREF='{{project.website_url}}'>{{project.website_url}}</A></TD></TR>
+<TR><TH>Website</TH><TD><A HREF='{{project.website_url}}'>{{project.website_url}}</A></TD></TR>
 {% endif %}
 
 {% if project.repository_url %}
-<TR><TH>Repository:</TH><TD><A HREF='{{project.repository_url}}'>{{project.repository_url}}</A></TD></TR>
+<TR><TH>Repository</TH><TD><A HREF='{{project.repository_url}}'>{{project.repository_url}}</A></TD></TR>
 {% endif %}
 
 {% if related_projects %}
-<TR><TH>Related Projects:</TH>
+<TR><TH>Related Projects</TH>
 <TD><UL>
 {% for link in related_projects %}
 <LI><A HREF='{{link.short_name}}'>{{link.name}}</A></LI>
@@ -501,7 +528,7 @@
 {% endif %}
 
 {% if photo_links %}
-<TR><TH>Photos:</TH>
+<TR><TH>Photos</TH>
 <TD>
 <div class="highslide-gallery">
 {% for link in photo_links %}
@@ -518,7 +545,7 @@
 {% endif %}
 
 {% if media_links %}
-<TR><TH>Media:</TH>
+<TR><TH>Media</TH>
 <TD><UL>
 {% for link in media_links %}
 <LI><A HREF='{{link.website_url}}'>{{link.media_type.name}}: {{link.description}}</A></LI>
@@ -527,15 +554,24 @@
 {% endif %}
 
 {% if press_links %}
-<TR><TH>Press:</TH>
+<TR><TH>Press</TH>
 <TD><UL>
 {% for link in press_links %}
-<LI><A HREF='{{link.website_url}}'>{{link.name}}: {{link.description}}</A></LI>
+<LI><A HREF='{{link.website_url}}'>{{link.source}}: {{link.title}}</A></LI>
 {% endfor %}
 </TD></TR>
 {% endif %}
 </TABLE>
+</CENTER>
 </div>
+{% if content_body %}
+<div class="content_body">
+<IMG SRC='http://images.nonpolynomial.com/nonpolynomial.com/site/npdivbarlong.png'>
+{% autoescape off %}
+{{content_body}}
+{% endautoescape %}
+</div>
+{% endif %}
 {% else %}
     <p>No project available.</p>
 {% endif %} 

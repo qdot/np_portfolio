@@ -54,9 +54,9 @@ class Media(models.Model):
 
 class Press(models.Model):
     projects = models.ForeignKey(Project)
-    description = models.TextField()
-    name = models.TextField()
+    source = models.CharField(max_length=200)
+    title = models.TextField()
     website_url = models.TextField()
 
     def __unicode__(self):
-        return self.project.name + ": " + self.name + " - " + self.description
+        return self.source + " - " + self.title

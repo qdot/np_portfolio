@@ -1,6 +1,7 @@
 # Create your views here.
 from django.shortcuts import render_to_response
-from django_portfolio.portfolio.models import *
+from np_portfolio.portfolio.models import *
+import os
 import re
 import markdown
 
@@ -20,9 +21,14 @@ def project(request, project_name):
     press_links = Press.objects.filter(projects=project.id)
     media_links = Media.objects.filter(projects=project.id)
     photo_links = Photo.objects.filter(project=project.id)
+    content_body = None
+    content_file = 'content/%s/articles/description.markdown' % (project_name)
+    if os.path.isfile(content_file):
+        with open(content_file, "r") as f:
+            content_body = markdown.markdown(f.read())
     photo_thumbnails = {}
     for photo in photo_links:
         if photo.flickr_url is not None:
             photo.photo_url = photo.flickr_url
             photo.thumbnail_url = re.sub(r'.jpg', r'_t.jpg', photo.flickr_url)
-    return render_to_response('portfolio/project.html', {"project" : project, "press_links": press_links, "media_links": media_links, "photo_links": photo_links, "photo_thumbnails": photo_thumbnails, "related_projects": related_projects})
+    return render_to_response('portfolio/project.html', {"project" : project, "press_links": press_links, "media_links": media_links, "photo_links": photo_links, "photo_thumbnails": photo_thumbnails, "related_projects": related_projects, "content_body": content_body })

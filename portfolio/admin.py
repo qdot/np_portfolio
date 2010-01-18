@@ -1,4 +1,4 @@
-from django_portfolio.portfolio.models import *
+from np_portfolio.portfolio.models import *
 from django.contrib import admin
 
 admin.site.register(Collaborator)
