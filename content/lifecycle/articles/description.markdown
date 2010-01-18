@@ -1,14 +1,12 @@
-# LifeCycle v1.0: First Life Locomotion in Second Life
-
-![Lifecycle Second Life Exhibit](http://images.nonpolynomial.com/nonpolynomial.com/projects/lifecycle/lifecycle1.jpg)
- 
 1. [Building a Virtual Bicycle](#1)
 2. [Overview of the Project](#2)
 3. [Setting up the Bike](#3)
 4. [Communicating with Second Life](#4)
 5. [What to do with a Second Life Bicycle](#5)
 6. [Plans for the Future](#6)
- 
+
+![Lifecycle Second Life Exhibit](http://images.nonpolynomial.com/nonpolynomial.com/projects/lifecycle/lifecycle1.jpg)
+    
 <A NAME="1"></A>
 ## Building a Virtual Bicycle
  
