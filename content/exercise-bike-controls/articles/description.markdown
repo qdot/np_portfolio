@@ -125,15 +125,107 @@ electronics. All I needed to do was switch one of the digital inputs to output
 on the XBC, set a clock to fire an interrupt every second, and I could get the
 info I needed. Here's the code for that:
 
+    //Contains Register Definitions
+    #include "gba.h"
+    //Contains Printf function for Xport
+    #include "textdisp.h"
+    //Contains GPIO accessors, explained in last code example
+    #include "gpioint.h"
+    //Contains the Interrupt Container for managing ISRs
+    #include "intcont.h"
+    //Contains the ISR interface 
+    #include "iinterupt.h"
+
+    class CReadoutTest : public IInterrupt
+    {
+            int m_count;
+            CGpioInt m_digitalSensors;
+    public:
+
+            CReadoutTest(CInterruptCont &intCont)
+            {	
+                    //Set the first digital port to be output
+                    m_digitalSensors.m_dataDir = 1;
+
+                    //Register this with the interrupt vector 
+                    //for GBA Timer 1, which is 4. 
+                    intCont->Register(*this, 4);	
+                    //Turn on the interrupt for GBA Timer 1
+                    intCont->Unmask(4);
+
+                    //Set the timer on, with interrupt on 
+                    //overflow, and 1 tick every 64 ticks
+                    //of the CPU clock
+                    GBA_REG_TM1CNT = 0x00c1;
+
+                    //Since we're on a 16Mhz CPU, running
+                    //at 1 timer tick per 64 CPU ticks, a
+                    //second progresses at 262192 timer 
+                    //ticks. Since we want to have a 10hz 
+                    //interrupt time, we just divide this by
+                    //10 and set the GBA timer to overflow at 
+                    //2^16 minus that number. This number is 
+                    //reloaded automatically by the GBA on 
+                    //every overflow, so we only have to set
+                    //this once.
+                    GBA_REG_TM1D = 0xffff - (262192/10);
+            }
+            ~CReadoutTest() {}
+
+            void RunTest()
+            {
+                    while(1)
+                    {
+                            //Sit in this loop forever, printing out
+                            //the output state of the pin we're testing
+                            //on, just to make sure things are working
+                            //correctly
+                            printf("%d\n", m_digitalSensors.m_data);
+                    }		
+            }
+
+            //Interrupt handling routine
+            //Takes the interrupt vector that has 
+            //been activated, just in case an object deals
+            //with multiple interrupts
+            virtual void Interrupt(int vector)
+            {
+                    ++m_count;
+                    if(m_count == 10)
+                    {
+                            //We've waiting 1 second, so set the
+                            //pin high
+                            m_digitalSensors.m_data = 1;
+                            m_count = 0;
+                    }
+                    else
+                    {
+                            //We're waiting, so set the pin low
+                            m_digitalSensors.m_data = 0;
+                    }
+            }
+    }
+
+    int main()
+    {
+            CInterruptCont intCont;
+            CReadoutTest test(intCont);
+            test.RunTest();
+            return 0;
+    }
+
 
 ![][17] 
 
 Well, I think the picture says it better than I could. I was pretty
 far off. So, just out of sheer curiosity, I decided to see what wheel size the
-bike was simulating. 9.0 miles/hr at 1 tick (or full wheel revolution) per
-second. 9mph * 5280f/m * 12i/f = 570240i/h / 3600s/h = 158.4i/s / pi = ~50.42
-inch diameter wheel? I'm just going to assume a ~25in wheel at ~2:1 gear
-ratio. Yeah. 
+bike was simulating. 
+
+9.0 miles/hr at 1 tick (or full wheel revolution) per second. 
+
+9mph * 5280f/m * 12i/f = 570240i/h / 3600s/h = 158.4i/s / pi = ~50.42 inch diameter wheel? 
+
+I'm just going to assume a ~25in wheel at ~2:1 gear ratio. Yeah. 
 
 ## Increasing encoder frequency, the ghetto way 
 
