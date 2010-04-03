@@ -428,7 +428,11 @@
   <UL class="PortfolioProjectList"> 
     {% for project in project_list %}
     <LI style="list-style-image: url(http://images.nonpolynomial.com/nonpolynomial.com/portfolio/icons/{{ project.short_name }}.png);">
-    <A HREF='{{project.short_name}}'>
+        {% for s in project_content_list %}
+	   {% ifequal s project.short_name  %}	
+	      <A HREF='{{project.short_name}}'>
+	   {% endifequal %}
+	{% endfor %}
     <B>{{ project.name }}</B>
     </A>
     </LI> 
