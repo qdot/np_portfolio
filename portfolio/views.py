@@ -8,12 +8,19 @@ import markdown
 def index(request):
     project_list = Project.objects.all().order_by('-date')
     project_year_list = {}
+    project_content_list = {}
     for project in project_list:
         if project.date.year not in project_year_list.keys():
             project_year_list[project.date.year] = []
         project_year_list[project.date.year].append(project)
+        content_file = 'content/%s/articles/description.markdown' % (project.name)
+        if os.path.isfile(content_file):
+            print "TRUE"
+            project_content_list[project.name] = True
+        else:
+            project_content_list[project.name] = False
     project_year_list = [ (k,project_year_list[k]) for k in sorted(project_year_list.keys(), reverse=True)]
-    return render_to_response('portfolio/index.html', {"project_year_list" : project_year_list})
+    return render_to_response('portfolio/index.html', {"project_year_list" : project_year_list, "project_content_list" : project_content_list})
 
 def project(request, project_name):
     project = Project.objects.get(short_name=project_name)

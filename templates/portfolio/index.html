@@ -427,8 +427,12 @@
   <div class="PortfolioYear">{{ project_year }}</div> 
   <UL class="PortfolioProjectList"> 
     {% for project in project_list %}
-    <LI style="list-style-image: url(http://images.nonpolynomial.com/nonpolynomial.com/portfolio/icons/{{ project.short_name }}.png);"><A HREF='{{project.short_name}}'><B>{{ project.name }}</B></A></LI> 
-    <UL class="PortfolioProjectDesc"> 
+    <LI style="list-style-image: url(http://images.nonpolynomial.com/nonpolynomial.com/portfolio/icons/{{ project.short_name }}.png);">
+    <A HREF='{{project.short_name}}'>
+    <B>{{ project.name }}</B>
+    </A>
+    </LI> 
+    <UL class="PortfolioProjectDesc">
       <LI><i>Description:</i> {{ project.description }}</LI>
     </UL> 
     {% endfor %}
