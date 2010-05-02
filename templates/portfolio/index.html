@@ -438,6 +438,12 @@
     </LI> 
     <UL class="PortfolioProjectDesc">
       <LI><i>Description:</i> {{ project.description }}</LI>
+      {% if project.website_url %}
+      <LI><i>Website:</i> <A HREF='{{ project.website_url }}'>{{ project.website_url }}</A></LI>
+      {% endif %}
+      {% if project.repository_url %}
+      <LI><i>Code Repository:</i> <A HREF='{{ project.repository_url }}'>{{ project.repository_url }}</A></LI>
+      {% endif %}
     </UL> 
     {% endfor %}
     </ul>
