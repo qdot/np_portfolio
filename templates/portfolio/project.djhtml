@@ -1,4 +1,4 @@
-{% include "portfolio/header.html" %}
+{% include "portfolio/header.djhtml" %}
 <div class="NPPageContent">	 
   <BR>
     <div class="PostPrevious">
@@ -91,4 +91,4 @@
       </div>            
  
     </div> 
-{% include "portfolio/footer.html" %}
+{% include "portfolio/footer.djhtml" %}

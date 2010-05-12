@@ -1,4 +1,4 @@
-{% include "portfolio/header.html" %}
+{% include "portfolio/header.djhtml" %}
 <div class="NPPageContent"> 
   <BR></BR>
   <div class="PostPrevious">
@@ -26,4 +26,4 @@
    <p>No project available.</p>
    {% endif %} 
 </div> 
-{% include "portfolio/footer.html" %}
+{% include "portfolio/footer.djhtml" %}
