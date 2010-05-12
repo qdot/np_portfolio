@@ -1,0 +1,553 @@
+<HTML> 
+  <HEAD> 
+    <script type="text/javascript" src="http://images.nonpolynomial.com/highslide/highslide-with-gallery.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://images.nonpolynomial.com/highslide/highslide.css" />
+
+<!--
+	2) Optionally override the settings defined at the top
+	of the highslide.js file. The parameter hs.graphicsDir is important!
+-->
+
+<script type="text/javascript">
+	hs.graphicsDir = 'http://images.nonpolynomial.com/highslide/graphics/';
+	hs.align = 'center';
+	hs.transitions = ['expand', 'crossfade'];
+	hs.outlineType = 'rounded-white';
+	hs.wrapperClassName = 'controls-in-heading';
+	hs.fadeInOut = true;
+	//hs.dimmingOpacity = 0.75;
+
+	// Add the controlbar
+	if (hs.addSlideshow) hs.addSlideshow({
+		//slideshowGroup: 'group1',
+		interval: 5000,
+		repeat: false,
+		useControls: true,
+		fixedControls: false,
+		overlayOptions: {
+			opacity: 1,
+			position: 'top right',
+			hideOnMouseOut: false
+		}
+	});
+</script>
+
+
+    <style type="text/css"> 
+      body {
+      margin:0px;
+      }
+      a {
+      text-decoration: underline;
+      }
+ 
+      a:link {
+      color: #777;
+      }
+ 
+      a:visited {
+      color: #888;
+      }
+ 
+      a:active {
+      color: #000;
+      }
+ 
+      a:hover {
+      color: #000;
+      }
+ 
+      h1, h2, h3 {
+      margin: 0px;
+      padding: 0px;
+      font-weight: normal;
+      }
+ 
+      .PostContent {
+      padding-bottom: 10px;
+      }
+ 
+      .PostTitle {
+      padding-top:5px;
+      width: 375px;
+      margin:0px auto;
+      }
+ 
+      .PostInfo {
+      margin:0px auto;
+      clear:both;
+      font-size:7pt;
+      height:15px;
+      }
+ 
+      .PostBody {
+      padding:5px;
+      font-family:  Georgia, Times, serif;
+      
+      margin:0px auto;
+      }
+ 
+      .PostBody h3 {
+      padding-top:5px;
+      padding-bottom:5px;
+      }
+ 
+      .PostCategory {
+      text-align:center;
+      }
+ 
+      .PostDate { 
+      float:right;
+      margin-right:10px;
+      }
+ 
+      .PostDate a{
+      font-size:9px;
+      }
+ 
+      .PostExtra {
+      width:250px;
+      }
+ 
+      .PostExtra img {
+      display:inline;
+      }
+ 
+      .sidebarIcons {
+      display:table;
+      }
+ 
+      .sidebarIcons div {
+      display:table-cell;
+      }
+ 
+      .PostExtra p {
+      line-height: 110%;
+      }
+ 
+      .AlignedText {
+      display:table;
+      width:100%;
+      }
+ 
+      .AlignedText div {
+      display:table-cell;
+      }
+ 
+      .AlignedText div.AlignLeft {
+      float:none;
+      text-align:left;
+      }
+ 
+      .AlignedText div.AlignRight {
+      text-align:right;
+      } 
+ 
+      .PostNav {
+      margin:0px auto;
+      }
+ 
+      .PostPrevious {
+      text-align:left;
+      }
+ 
+      .PostNext {
+      text-align:right;
+      }
+ 
+      #container {
+      width:600px;
+      line-height: 140%;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: left;
+      padding: 0px;     
+      background-color: #FFFFFF;
+      }
+ 
+ 
+      #center {
+      float: left;
+      overflow: hidden;
+      }
+ 
+      .content {
+      padding: 15px 15px 5px 15px;
+      background-color: #FFFFFF;
+      
+      color: #666666;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: x-small;
+      }
+ 
+      #right {
+      float: right;
+      
+      
+      width: 135px;
+      background-color: #FFFFFF;
+      
+      overflow: hidden;
+      }
+ 
+      .content p {
+      color: #666666;
+      font-family:  Georgia, Times, serif;
+      font-size: 10px;
+      font-weight: normal;
+      line-height: 150%;
+      text-align: left;
+      margin-bottom: 10px;
+      }
+ 
+      .content blockquote {
+      line-height: 150%;
+      }
+ 
+      .content li {
+      line-height:150%;
+      }
+ 
+      .content h2 {
+      color: #666666;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: x-small;
+      
+      text-align: left;
+      font-weight: bold;
+      
+      
+      margin-bottom: 10px;
+      
+      }
+ 
+      .PostTitle h3 {
+      color: #666666;
+      font-family:  Georgia, Times, serif;
+      font-size: medium;
+      
+      text-align: center;
+      font-weight: bold;
+      
+      margin-bottom: 4px;
+      
+      }
+ 
+      .sidebar {
+      margin-top:20px;
+      padding: 5px;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: x-small;
+      }
+ 
+      .sidebarSub {
+      padding:5px;
+      
+      background: #EEE;
+      margin-bottom:5px;}
+ 
+      .sidebar h2 {
+      color: #666666;
+      font-family: georgia, sans-serif;
+      font-size: xx-small;
+      
+      text-align: center;
+      font-weight: bold;
+      
+      text-transform: uppercase;
+      
+      letter-spacing: .2em;
+      }
+ 
+ 
+      .sidebar ul {
+      padding-left: 0px;
+      margin: 0px;
+      margin-bottom: 10px;
+      }
+ 
+      .sidebar ul ul {
+      margin-bottom: 0px;
+      }
+ 
+      .sidebar #categories ul {
+      padding-left: 15px;
+      }
+ 
+      .sidebar li {
+      color: #666666;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: x-small;
+      text-align: left;
+      line-height: 110%;
+      margin-top: 10px;
+      list-style-type: none;
+      }
+ 
+      .sidebar #categories li {
+      list-style-type: circle;
+      }
+ 
+      .sidebar img {
+      border: 3px solid #FFFFFF;
+      }
+ 
+      .photo {
+      text-align: left;
+      margin-bottom: 20px;
+      }
+ 
+      .link-note {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: x-small;
+      line-height: 150%;
+      text-align: left;
+      padding: 2px;
+      margin-bottom: 15px;
+      }
+ 
+      .Portfolio {
+      width:600px;
+      margin-left:auto;
+      margin-right:auto;
+      }
+ 
+      .PortfolioProjectList {
+      width:500px;
+      margin-left:auto;
+      margin-right:auto;
+      }
+ 
+      .Portfolio ul {
+      }
+ 
+      .Portfolio li {
+      padding-top: 3px;
+      }
+ 
+      .PortfolioYear {
+      width:100%;
+      text-align:right;
+      padding-top:10px;
+      list-style-type: none;
+      font-size: large;
+      }
+ 
+      .PortfolioProjectDesc {
+      list-style-image: none;
+      list-style-type: square;
+      }
+ 
+      .NPPage {
+      width : 790px;
+      font-family:  Georgia, Times, serif;
+      font-size: 11px;
+      }
+ 
+      .NPPage IMG {
+      display:block;
+      }
+ 
+      .NPCenteredImg IMG {
+      display:inline;
+      text-align:center;
+      border:0px;
+      }
+ 
+      .NPContent {
+      display:block;
+      }
+ 
+      .NPMenu {
+      width : 124px;
+      float : left;
+      }
+ 
+      .NPMenuLeft {
+      }
+ 
+      .NPPageContent {
+      float : left;
+      width : 630px;
+      margin-left:18px;
+      }
+ 
+      .NPFooter {
+      font-size:10px;
+      }
+      
+      .Project {
+      width:100%;
+      }
+
+      .Project H1 {
+      text-align: center;
+      }
+
+      .Project TABLE {
+      width:80%;
+      border: 1px solid #FFF;
+
+      }
+
+      .Project TH {
+      vertical-align:text-top;
+      font-size:11pt;
+      font-weight:lighter;
+      width:90px;
+      text-align: right;
+      background: #CCC;
+      margin-right:5px;
+      padding-right:5px;
+      }
+
+      .Project TD {
+      font-size:10pt;
+      }
+    
+      .content_body {
+      margin-top:20px;
+      margin-left:20px;
+      margin-right:20px;
+      font-size:10pt;
+      }
+
+      .content_body H1 {
+      text-align: center;
+      }
+
+      .content_body IMG {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+      }
+    </style> 
+    <TITLE>Nonpolynomial Labs - </TITLE> 
+  </HEAD> 
+  <BODY> 
+    <div class="NPPage"> 
+      <IMG SRC='http://images.nonpolynomial.com/nonpolynomial.com/site/npheader.png' /> 
+      <div class="NPContent"> 
+		<div class="NPMenu"> 
+		  <A HREF='http://www.nonpolynomial.com/about/'><IMG SRC='http://images.nonpolynomial.com/nonpolynomial.com/site/npabout.png' border=0></A> 
+		  <A HREF='http://www.nonpolynomial.com/portfolio/'><IMG SRC='http://images.nonpolynomial.com/nonpolynomial.com/site/npprojects.png' border=0></A> 
+		  <A HREF='http://www.nonpolynomial.com/'><IMG SRC='http://images.nonpolynomial.com/nonpolynomial.com/site/nphome.png' border=0></A> 
+	      <div class="sidebar"> 
+			<div class="sidebarSub"> 
+			  <h2>Syndication</h2> 
+			  <BR /> 
+			  <CENTER><a href="http://feeds.feedburner.com/nonpolynomiallabs" title="Subscribe to my feed" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="" style="border:0"/></a><BR/></CENTER> 
+			</div> 
+			<div class="sidebarSub"> 
+			  <h2>Contact</h2> 
+			  <p>Contact kyle by email at kyle at nonpolynomial dot com</p> 
+			  <CENTER> 
+				<div class="sidebarIcons"> 
+				  <div class="sidebarIcon"> 
+					<A HREF='http://www.facebook.com/kyle.machulis'><IMG SRC='http://images.nonpolynomial.com/common/icons/FaceBook-16x16.png' border="0"/></A> 
+				  </div> 
+				  <div class="sidebarIcon"> 
+					<A HREF='http://www.linkedin.com/in/kylemachulis'><IMG SRC='http://images.nonpolynomial.com/common/icons/LinkedIn-16x16.png' border="0"/></A> 
+				  </div> 
+				  <div class="sidebarIcon"> 
+					<A HREF='http://www.twitter.com/qdot'><IMG SRC='http://images.nonpolynomial.com/common/icons/Twitter-16x16.png' border="0"/></A> 
+				  </div> 
+				  <div class="sidebarIcon"> 
+					<A HREF='http://www.flickr.com/photos/qdot76367/'><IMG SRC='http://images.nonpolynomial.com/common/icons/Flickr-16x16.png' border="0"/></A> 
+				  </div> 
+				</div> 
+				<A HREF='http://www.youtube.com/user/qdot76367'><IMG SRC='http://images.nonpolynomial.com/common/icons/Youtube-16x16.png' border="0"/></A> 
+			  </CENTER> 
+			</div> 
+			<div class="sidebarSub"> 
+			  <h2>Recent Entries</h2> 
+			  <ul> 
+				
+				<LI><A HREF='/2009/12/03/nonpolynomial-labs-roboexotica-projects/'>Nonpolynomial Labs Roboexotica Projects</A></LI>		  
+				
+				<LI><A HREF='/2009/09/08/a-day-at-the-ports/'>A Day at the Ports</A></LI>		  
+				
+				<LI><A HREF='/2009/07/18/new-software-project-icons-and-pages/'>New Software Project Icons and Pages</A></LI>		  
+				
+				<LI><A HREF='/2009/05/03/new-projects-at-np-labs/'>New Projects at NP Labs</A></LI>		  
+				
+				<LI><A HREF='/2008/11/02/np-labs-projects-update/'>NP Labs Projects Update</A></LI>		  
+				
+				<LI><A HREF='/2008/09/05/99-dollar-novint-falcons-at-tigerdirect/'>99 Dollar Novint Falcons at TigerDirect</A></LI>		  
+				
+				<LI><A HREF='/2008/06/07/falcon-uncasing/'>Falcon Uncasing</A></LI>		  
+				
+				<LI><A HREF='/2008/05/24/solidedge-simulation-of-the-novint-falcon/'>SolidEdge Simulation of the Novint Falcon</A></LI>		  
+				
+				<LI><A HREF='/2008/05/18/video-from-futuristic-music-design-contest-at-yuris-night/'>Video from Futuristic Music Design Contest at Yuri's Night</A></LI>		  
+				
+				<LI><A HREF='/2008/04/29/libusb-libftdi-latency-and-my-own-stupidity/'>libusb, libftdi, latency, and my own stupidity</A></LI>		  
+				
+			  </ul> 
+			</div> 
+			<div class="sidebarSub"> 
+			  <h2>Projects</h2> 
+			  <p>Code hosted at <A HREF='http://www.github.com'>Github</A></p> 
+			  <CENTER> 
+				<A HREF='http://www.github.com/qdot/'><IMG SRC='http://images.nonpolynomial.com/common/icons/Github-100x100.png' border="0"/></A> 
+			  </CENTER> 
+			</div> 
+			<div class="sidebarSub"> 
+			  <h2>Copyright</h2> 
+			  <p>Copyright 2004-2009 Kyle Machulis/NP Labs</p> 
+			</div> 
+	      </div> 
+		</div>	   
+		<div class="NPPageContent">	 
+          <BR>
+          <div class="PostPrevious">
+            <A HREF='/portfolio/{{ project.short_name }}'>&lt;&lt; Back to {{ project.name }}</A>
+          </div>
+		  <BR>
+{% if project %}
+<div class="Project">
+<H1>{{project.name}}</H1>
+<CENTER>
+<TABLE>
+<TR><TH>Description</TH><TD>{{project.description}}</TD></TR>
+</TABLE>
+</CENTER>
+</div>
+{% if content_body %}
+<div class="content_body">
+<IMG SRC='http://images.nonpolynomial.com/nonpolynomial.com/site/npdivbarlong.png'>
+{% autoescape off %}
+{{content_body}}
+{% endautoescape %}
+</div>
+{% endif %}
+{% else %}
+    <p>No project available.</p>
+{% endif %} 
+
+		</div> 
+      </div>            
+ 
+    </div> 
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> 
+    </script> 
+    <script type="text/javascript"> 
+      _uacct = "UA-1413101-3";urchinTracker();
+    </script> 
+    <script type="text/javascript"> 
+      //<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/nonpolynomial/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+    </script> 
+  </BODY> 
+</HTML> 
+ 

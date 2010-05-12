@@ -16,4 +16,5 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^portfolio/$', 'np_portfolio.portfolio.views.index'),
     (r'^portfolio/(?P<project_name>[a-zA-Z0-9_-]+)$', 'np_portfolio.portfolio.views.project'),
+    (r'^portfolio/(?P<project_name>[a-zA-Z0-9_-]+)/articles/(?P<article_name>[a-zA-Z0-9_-]+)$', 'np_portfolio.portfolio.views.article'),
 )

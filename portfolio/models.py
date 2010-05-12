@@ -18,6 +18,7 @@ class Project(models.Model):
     short_name = models.CharField(max_length=200)
     date = models.DateField()
     description = models.TextField()
+    description_long = models.TextField(null=True, blank=True)
     website_url = models.URLField(null=True, blank=True)
     repository_url = models.URLField(null=True, blank=True)
     collaborators = models.ManyToManyField(Collaborator, null=True, blank=True)
